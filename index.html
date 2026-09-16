@@ -795,6 +795,7 @@ function autoSaveCurrentTournament() {
         }
 
         function startTournament() {
+            isSpectatorMode = false;
             const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const newId = 'tourn_' + Date.now();
             const createdDate = new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
