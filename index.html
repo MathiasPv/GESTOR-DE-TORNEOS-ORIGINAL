@@ -399,6 +399,11 @@ function loadTournamentForSpectator(id) {
         if (found) {
             tournament = found;
             isSpectatorMode = true;
+            const spectatorIds = JSON.parse(localStorage.getItem('torneos_espectador_v1') || '[]');
+if (!spectatorIds.includes(id)) {
+    spectatorIds.push(id);
+    localStorage.setItem('torneos_espectador_v1', JSON.stringify(spectatorIds));
+}
 
             // Ocultar controles exclusivos del administrador
             const shareBtn = document.getElementById('btnShareSpectator');
@@ -620,6 +625,8 @@ function autoSaveCurrentTournament() {
             }
 
             tournament = JSON.parse(JSON.stringify(found));
+            const spectatorIds = JSON.parse(localStorage.getItem('torneos_espectador_v1') || '[]');
+isSpectatorMode = spectatorIds.includes(id);
             if (!tournament.playoffs.customPairings) tournament.playoffs.customPairings = [];
             tournament.currentStep = 3;
             goToStep(3);
