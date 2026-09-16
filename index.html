@@ -1752,7 +1752,7 @@ isSpectatorMode = spectatorIds.includes(id);
                         <div class="bg-slate-900 border ${isFinalRound ? 'border-amber-500/50 shadow-amber-500/10' : 'border-slate-700'} rounded-2xl p-3 shadow-xl space-y-3 relative">
                             <!-- Player 1 Entry -->
                             <div class="flex items-center justify-between p-2 rounded-xl transition ${p1IsWinner ? 'bg-emerald-950/40 border border-emerald-500/40' : 'bg-slate-800/80'}">
-                                <span class="text-xs font-bold truncate max-w-[140px] ${p1IsWinner ? 'text-emerald-400' : match.p1.name === 'BYE' || match.p1.name === 'TBD' ? 'text-slate-500' : 'text-slate-100'}">
+                                <span class="text-xs font-bold break-words whitespace-normal ${p1IsWinner ? 'text-emerald-400' : match.p1.name === 'BYE' || match.p1.name === 'TBD' ? 'text-slate-500' : 'text-slate-100'}">
                                     ${p1IsWinner ? '<i class="fa-solid fa-crown text-amber-400 mr-1 text-[10px]"></i>' : ''}${escapeHtml(match.p1.name)}
                                 </span>
                                 <input type="number" min="0" max="3" id="po_score_${rIdx}_${mIdx}_1" value="${val1}" ${isDisabled ? 'disabled' : ''} placeholder="0"
@@ -1761,7 +1761,7 @@ isSpectatorMode = spectatorIds.includes(id);
 
                             <!-- Player 2 Entry -->
                             <div class="flex items-center justify-between p-2 rounded-xl transition ${p2IsWinner ? 'bg-emerald-950/40 border border-emerald-500/40' : 'bg-slate-800/80'}">
-                                <span class="text-xs font-bold truncate max-w-[140px] ${p2IsWinner ? 'text-emerald-400' : match.p2.name === 'BYE' || match.p2.name === 'TBD' ? 'text-slate-500' : 'text-slate-100'}">
+                                <span class="text-xs font-bold break-words whitespace-normal ${p2IsWinner ? 'text-emerald-400' : match.p2.name === 'BYE' || match.p2.name === 'TBD' ? 'text-slate-500' : 'text-slate-100'}">
                                     ${p2IsWinner ? '<i class="fa-solid fa-crown text-amber-400 mr-1 text-[10px]"></i>' : ''}${escapeHtml(match.p2.name)}
                                 </span>
                                 <input type="number" min="0" max="3" id="po_score_${rIdx}_${mIdx}_2" value="${val2}" ${isDisabled ? 'disabled' : ''} placeholder="0"
